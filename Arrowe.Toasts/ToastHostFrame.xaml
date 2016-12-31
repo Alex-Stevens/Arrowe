@@ -1,0 +1,23 @@
+﻿<Grid
+    x:Class="Arrowe.Toasts.ToastHostFrame"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Popup IsOpen="{Binding IsOpen}"
+           IsLightDismissEnabled="False"
+           Margin="20"
+           x:Name="thePopup">
+
+        <Popup.ChildTransitions>
+            <TransitionCollection>
+                <EdgeUIThemeTransition Edge="Right" />
+            </TransitionCollection>
+        </Popup.ChildTransitions>
+
+        <ContentControl x:Name="toastContent"
+                        Tapped="ThePopup_OnTapped"
+                        DataContext="{Binding Toast}"
+                        Content="{Binding View}" />
+
+    </Popup>
+</Grid>

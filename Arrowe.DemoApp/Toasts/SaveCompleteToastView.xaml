@@ -1,0 +1,89 @@
+﻿<UserControl
+    x:Class="Arrowe.DemoApp.Toasts.SaveCompleteToastView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Arrowe.Toasts"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="100"
+    d:DesignWidth="300">
+
+    <Grid x:Name="popupContent" Height="100">
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="1" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="1" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" 
+                  Width="{Binding ActualHeight, ElementName=popupContent}">
+
+                <Grid.Background>
+                    <SolidColorBrush Color="Green" />
+                </Grid.Background>
+
+                <Image Grid.Column="0"
+                       Source="{Binding Icon}"
+                       Width="90" Height="90" Margin="5" />
+            </Grid>
+
+            <Grid Grid.Column="1">
+
+                <Grid.Background>
+                    <SolidColorBrush Color="White" />
+                </Grid.Background>
+
+            </Grid>
+
+            <Grid Grid.Column="2" 
+                  Width="40">
+
+                <Grid.Background>
+                    <SolidColorBrush Color="{Binding Colour}" />
+                </Grid.Background>
+
+            </Grid>
+
+            <Grid Grid.Column="3">
+
+                <Grid.Background>
+                    <SolidColorBrush Color="White" />
+                </Grid.Background>
+
+            </Grid>
+
+            <Grid Grid.Column="4">
+                <Grid.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.75" />
+                </Grid.Background>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" 
+                           Text="Saved"
+                           Margin="5"
+                           FontSize="36"
+                           VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="1" 
+                           Text="{Binding Message}"
+                           Margin="5"
+                           TextAlignment="Right"
+                           FontSize="36"
+                           VerticalAlignment="Center"/>
+            </Grid>
+        </Grid>
+
+        <Border BorderBrush="White" 
+                BorderThickness="1" />
+
+    </Grid>
+</UserControl>
